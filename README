@@ -1,0 +1,49 @@
+L'arborescence du projet est la suivante : ../src/  ../install/  ../tests/  ../deprecated/  ../report/  ../Makefile  ../README  ../name.txt
+
+(***** README *****)
+- Ce fichier texte nous permet de décrire l'arborescence de notre projet.
+
+
+(***** name.txt *****)
+- Ce fichier texte nous permet de donner un nom à notre équipe afin d'être plus facilement reconnaissable sur le ladder.
+
+
+(***** Répertoire deprecated *****)
+- Dans le répertoire 'deprecated' se trouvent nos essais de programmes qui ont été laissés de côté ou qui ne sont pas les versions les plus récentes.
+
+
+(***** Répertoire src *****)
+- Dans le répertoire 'src' se trouvent tous les fichiers permettant la conception de la solution algorithmique.
+- L'implémentation du bitboard est faite dans les fichiers 'bitboard.c' et 'bitboard.h'.
+- L'implémentation du joueur aléatoire est faite dans les fichiers 'player.c' et 'player.h'.
+- L'implémentation du joueur suivant la stratégie simple est faite dans le fichier 'simple_player.c' à partir des fichiers 'simple_strat.c' et 'simple_strat.h'.
+- L'implémentation du joueur suivant la stratégie Min-Max est faite dans le fichier 'player_minmax.c' à partir des fichiers 'minmax.c' et 'minmax.h'.
+- Les fichiers 'tools.c' et 'tools.h' comportent l'implémentation d'outils divers, utiles à l'implémentation du serveur.
+
+
+(***** Répertoire tests *****)
+- Dans le répertoire 'tests' se trouvent tous les fichiers permettant l'éxecution des tests liés aux implémentations du répertoire 'src'.
+- Les fichiers 'tests.c' et 'tests.h' sont utiles pour l'affichage de messages d'erreur et de couleurs pour les tests.
+- L'implémentation des tests pour la stratégie Min-Max est faite dans le fichier 'test_minmax.c'.
+- L'implémentation des tests pour la stratégie simple est faite dans le fichier 'test_simple_strat.c'.
+- L'implémentation des tests pour le bitboard est faite dans le fichier 'test_bitboard.c'.
+- L'implémentation des tests pour les outils supplémentaires est faite dans le fichier 'test_tools.c'.
+
+
+(***** Répertoire install *****)
+- Le répertoire 'install' est originellement vide. Une fois la commande 'make install' lancée, s'y trouvent le serveur et toutes les bibliothèques dynamiques représentant les joueurs.
+
+
+(***** Répertoire report *****)
+- Dans le répertoire 'report' se trouve le rapport final sous la forme du fichier 'report.tex' et 'report.pdf'.
+
+
+(***** Makefile ******)
+- La commande 'make' lance les sous-commandes 'make build', 'make code', 'make install'. Il est nécéssaire d'entrer cette commande avant d'entrer 'make test'
+- La commande 'make build' permet de générer les bibliothèques dynamiques représentant les différents joueurs. 
+- La commande 'make install' permet de copier l'exécutable 'server' et tous les joueurs sous la forme de bibliothèques dynamiques (.so).
+- La commande 'make code' permet de créer l'exécutable 'server'.
+- La commande 'make test', qui doit être entrée après la commande 'make', lance les différents tests suivants : tests sur le bitboard (implémentation, opérations sur celui-ci), tests des outils et test de la stratégie simple.
+- Les tests pour la stratégie minmax peuvent être lancés avec la commande 'make test-minmax', les tests du minmax ont été séparés des autres tests car ils prennent plus de temps.
+- La commande 'make clean' permet de nettoyer les répertoires de travail, enlever tous les fichiers objets et notamment les bibliothèques dynamiques représentant les différents joueurs, ainsi que l'exécutable 'server'.
+- De plus, il existe d'autres règles permettant de générer les fichiers objets respectifs aux tests.
